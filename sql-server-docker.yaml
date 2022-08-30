@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+    db:
+        image: mcr.microsoft.com/mssql/server:2019-CU3-ubuntu-18.04
+        ports:
+            - 14330:1433
+        environment:
+            ACCEPT_EULA: Y
+            SA_PASSWORD: Tisj*2022
+        volumes:
+            - db-data-sqlserver:/var/opt/mssql
+            
+volumes:
+  db-data-sqlserver:
+    driver: local
